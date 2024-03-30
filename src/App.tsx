@@ -5,6 +5,7 @@ import { useBudget } from "./hooks/useBudget"
 import BudgetTracker from "./components/BudgetTracker"
 import ExpenseModal from "./components/ExpenseModal"
 import ExpenseList from "./components/ExpenseList"
+import FilterByCategory from "./components/FilterByCategory"
 
 
 function App() {
@@ -28,7 +29,8 @@ localStorage.setItem('expenses',JSON.stringify(state.expenses))
     </div>
     
     {isValidBudget && (
-      <main className="mx-w-3xl max-auto py-10">
+      <main className="max-w-3xl mx-auto py-10">
+        <FilterByCategory/>
         <ExpenseList/>
         <ExpenseModal />
       </main>
